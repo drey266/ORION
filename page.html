@@ -23,11 +23,118 @@
       color: white;
       text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
     }
+
+    .container {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      box-shadow: 2px 0 10px rgba(0, 255, 153, 0.5);
+    }
+
+    .sidebar button {
+      background-color: transparent;
+      border: 2px solid #00ff99;
+      color: white;
+      font-size: 1.2rem;
+      padding: 10px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .sidebar button:hover {
+      background-color: #00ff99;
+      color: black;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
   </style>
 </head>
 <body>
 
   <div class="logo">ORION</div>
+
+  <div class="container">
+    <div class="sidebar">
+      <button onclick="showSection('news')">Новости</button>
+      <button onclick="showSection('team')">Таблица команды</button>
+      <button onclick="showSection('telegram')">Telegram</button>
+    </div>
+
+    <div class="content">
+      <div id="news" class="section active">
+        <h1>Новости</h1>
+        <p>Здесь будут свежие новости проекта ORION!</p>
+      </div>
+
+      <div id="team" class="section">
+        <h1>Таблица команды</h1>
+        <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%;">
+          <tr style="background-color: #00ff99; color: black;">
+            <th>Имя</th>
+            <th>Роль</th>
+            <th>Статус</th>
+          </tr>
+          <tr>
+            <td>Андрей</td>
+            <td>Руководитель проекта</td>
+            <td>Активен</td>
+          </tr>
+          <tr>
+            <td>Сергей</td>
+            <td>Разработчик</td>
+            <td>Активен</td>
+          </tr>
+          <tr>
+            <td>Мария</td>
+            <td>Дизайнер</td>
+            <td>На проверке</td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="telegram" class="section">
+        <h1>Наш Telegram</h1>
+        <p>Присоединяйтесь к нашему сообществу в Telegram!</p>
+        <a href="https://t.me/yourchannel" target="_blank" style="color: #00ff99;">Перейти в Telegram</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>

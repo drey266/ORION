@@ -168,33 +168,46 @@ function showContent(section) {
     document.getElementById('teamBtn').classList.add('button-active');
   }
   else if (section === 'players') {
-    content.innerHTML = `
-      <h1>Игроки команды</h1>
-      <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
-        <tr style="background-color: #00ff99; color: black;">
-          <th>Никнейм</th>
-          <th>Позиция</th>
-          <th>Статус</th>
-        </tr>
-        <tr>
-          <td>OrionStar</td>
-          <td>Капитан</td>
-          <td>Онлайн</td>
-        </tr>
-        <tr>
-          <td>Speedster</td>
-          <td>Штурмовик</td>
-          <td>Оффлайн</td>
-        </tr>
-        <tr>
-          <td>ShieldBear</td>
-          <td>Защитник</td>
-          <td>Онлайн</td>
-        </tr>
-      </table>
-    `;
-    document.getElementById('playersBtn').classList.add('button-active');
-  } 
+  content.innerHTML = `
+    <h1>Игроки команды</h1>
+    <div style="text-align: center; margin-bottom: 20px;">
+      <span style="
+        display: inline-block;
+        font-size: 48px;
+        font-weight: bold;
+        font-family: 'Russo One', sans-serif;
+        color: #00ff99;
+        text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99;
+        margin-top: 10px;
+      ">
+        ORION
+      </span>
+    </div>
+    <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+      <tr style="background-color: #00ff99; color: black;">
+        <th>Никнейм</th>
+        <th>Позиция</th>
+        <th>Статус</th>
+      </tr>
+      <tr>
+        <td>OrionStar</td>
+        <td>Капитан</td>
+        <td>Онлайн</td>
+      </tr>
+      <tr>
+        <td>Speedster</td>
+        <td>Штурмовик</td>
+        <td>Оффлайн</td>
+      </tr>
+      <tr>
+        <td>ShieldBear</td>
+        <td>Защитник</td>
+        <td>Онлайн</td>
+      </tr>
+    </table>
+  `;
+  document.getElementById('playersBtn').classList.add('button-active');
+}
   else if (section === 'telegram') {
     content.innerHTML = `
       <h1>Наш Telegram</h1>

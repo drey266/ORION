@@ -227,34 +227,41 @@ function showContent(section) {
     `;
     document.getElementById('teamBtn').classList.add('button-active');
   }
-  else if (section === 'players') {
+   else if (section === 'players') {
     content.innerHTML = `
       <h1>Игроки команды</h1>
-      <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
-        <tr style="background-color: #00ff99; color: black;">
-          <th>Никнейм</th>
-          <th>Позиция</th>
-          <th>Статус</th>
-        </tr>
-        <tr>
-          <td>OrionStar</td>
-          <td>Капитан</td>
-          <td>Онлайн</td>
-        </tr>
-        <tr>
-          <td>Speedster</td>
-          <td>Штурмовик</td>
-          <td>Оффлайн</td>
-        </tr>
-        <tr>
-          <td>ShieldBear</td>
-          <td>Защитник</td>
-          <td>Онлайн</td>
-        </tr>
-      </table>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Имя игрока</th>
+              <th>Голы</th>
+              <th>Жёлтые</th>
+              <th>Красные</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Эндрик</td><td>5</td><td>1</td><td>0</td></tr>
+            <tr><td>Килиан Мбаппе</td><td>2</td><td>0</td><td>0</td></tr>
+            <tr><td>Лука Модрич</td><td>2</td><td>1</td><td>0</td></tr>
+            <tr><td>Арда Гюлер</td><td>2</td><td>0</td><td>0</td></tr>
+            <tr><td>Феде Вальверде</td><td>2</td><td>0</td><td>0</td></tr>
+            <tr><td>Орельен Чуамени</td><td>2</td><td>1</td><td>0</td></tr>
+            <tr><td>Гонсало Гарсия</td><td>1</td><td>0</td><td>0</td></tr>
+            <tr><td>Эдуардо Камавинга</td><td>1</td><td>1</td><td>0</td></tr>
+            <tr><td>Антонио Рюдигер</td><td>1</td><td>0</td><td>0</td></tr>
+            <tr><td>Джуд Беллингем</td><td>1</td><td>0</td><td>0</td></tr>
+            <tr><td>Винисиус Жуниор</td><td>1</td><td>0</td><td>0</td></tr>
+            <tr><td>Чема Андрес</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>Лоренсо Аргуаро</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>Хакобо Рамон</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>Диего Аргуаро</td><td>0</td><td>0</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
     `;
     document.getElementById('playersBtn').classList.add('button-active');
-  } 
+}
   else if (section === 'telegram') {
     content.innerHTML = `
       <h1>Наш Telegram</h1>

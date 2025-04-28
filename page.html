@@ -43,13 +43,17 @@
       border: 1px solid #00ff99;
       padding: 8px 16px;
       border-radius: 8px;
-      transition: background 0.3s, color 0.3s;
+      transition: background 0.4s ease, color 0.4s ease, transform 0.1s ease;
       cursor: pointer;
     }
 
     nav a:hover {
-      background: #00ff99;
+      background: rgba(0, 255, 153, 0.7);
       color: black;
+    }
+
+    nav a:active {
+      transform: scale(0.95);
     }
 
     .content {
@@ -62,7 +66,6 @@
       color: black;
     }
 
-    /* Стили для таблицы */
     .table-container {
       margin-top: 20px;
       overflow-x: auto;
@@ -72,7 +75,7 @@
       width: 100%;
       border-collapse: collapse;
       background-color: #001a00;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     th, td {
@@ -119,6 +122,7 @@ function showContent(section) {
   // Снять выделение со всех кнопок
   document.querySelectorAll('nav a').forEach(btn => btn.classList.remove('button-active'));
 
+  // Обновить контент в зависимости от выбранного раздела
   if (section === 'news') {
     content.innerHTML = `
       <h1>Новости</h1>
@@ -135,95 +139,31 @@ function showContent(section) {
   else if (section === 'team') {
     content.innerHTML = `
       <h1>Таблица команд</h1>
-<div class="table-container">
-<table>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Команда</th>
-      <th>И</th>
-      <th>В</th>
-      <th>Н</th>
-      <th>П</th>
-      <th>Очки</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Орион</td>
-      <td>10</td>
-      <td>8</td>
-      <td>1</td>
-      <td>1</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Байер</td>
-      <td>10</td>
-      <td>7</td>
-      <td>2</td>
-      <td>1</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>МФК Тумужунту</td>
-      <td>10</td>
-      <td>6</td>
-      <td>1</td>
-      <td>3</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Феникс</td>
-      <td>10</td>
-      <td>5</td>
-      <td>2</td>
-      <td>3</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Бостон</td>
-      <td>10</td>
-      <td>5</td>
-      <td>1</td>
-      <td>4</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>2Crazy</td>
-      <td>10</td>
-      <td>4</td>
-      <td>2</td>
-      <td>4</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>FC Athletic</td>
-      <td>10</td>
-      <td>4</td>
-      <td>1</td>
-      <td>5</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>Рубин</td>
-      <td>10</td>
-      <td>3</td>
-      <td>0</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Команда</th>
+              <th>И</th>
+              <th>В</th>
+              <th>Н</th>
+              <th>П</th>
+              <th>Очки</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Орион</td><td>10</td><td>8</td><td>1</td><td>1</td><td>25</td></tr>
+            <tr><td>2</td><td>Байер</td><td>10</td><td>7</td><td>2</td><td>1</td><td>23</td></tr>
+            <tr><td>3</td><td>МФК Тумужунту</td><td>10</td><td>6</td><td>1</td><td>3</td><td>19</td></tr>
+            <tr><td>4</td><td>Феникс</td><td>10</td><td>5</td><td>2</td><td>3</td><td>17</td></tr>
+            <tr><td>5</td><td>Бостон</td><td>10</td><td>5</td><td>1</td><td>4</td><td>16</td></tr>
+            <tr><td>6</td><td>2Crazy</td><td>10</td><td>4</td><td>2</td><td>4</td><td>14</td></tr>
+            <tr><td>7</td><td>FC Athletic</td><td>10</td><td>4</td><td>1</td><td>5</td><td>13</td></tr>
+            <tr><td>8</td><td>Рубин</td><td>10</td><td>3</td><td>0</td><td>7</td><td>9</td></tr>
+          </tbody>
+        </table>
+      </div>
     `;
     document.getElementById('teamBtn').classList.add('button-active');
   }

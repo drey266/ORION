@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ORION</title>
+  <style>
+    /* Стили для страницы */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #000; /* Черный фон */
+      color: #fff; /* Белый текст */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+      font-size: 5rem;
+      margin-bottom: 40px;
+      letter-spacing: 5px;
+    }
+
+    .button {
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      color: #00ffff;
+      background: transparent;
+      border: 2px solid #00ffff;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #00ffff;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ORION</h1>
+  <a href="https://example.com" class="button">Перейти на сайт</a>
+
+</body>
+</html>

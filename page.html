@@ -3,216 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ORION — Новости и Команда</title>
+  <title>ORION</title>
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
+      height: 100vh;
       background: linear-gradient(135deg, #00ff99, #000000);
       font-family: 'Russo One', sans-serif;
       color: white;
       display: flex;
-    }
-
-    .sidebar {
-      width: 220px;
-      background: rgba(0, 0, 0, 0.8);
-      padding-top: 30px;
-      display: flex;
       flex-direction: column;
-      align-items: center;
-      box-shadow: 5px 0 15px #00ff99;
-    }
-
-    .sidebar a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-      margin: 15px 0;
-      padding: 10px 20px;
-      border: 2px solid #00ff99;
-      border-radius: 10px;
-      width: 80%;
-      text-align: center;
-      transition: background 0.3s, color 0.3s;
-      cursor: pointer;
-    }
-
-    .sidebar a:hover {
-      background: #00ff99;
-      color: black;
-    }
-
-    .content {
-      flex: 1;
-      padding: 20px;
     }
 
     .logo {
-      font-size: 2rem;
+      padding: 20px;
+      font-size: 2.5rem;
       color: white;
       text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
-      margin-bottom: 40px;
     }
-
-    .section {
-      display: none; /* Скрыть все секции по умолчанию */
-      margin: 0 auto;
-      width: 90%;
-      max-width: 800px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px #00ff99;
-      margin-bottom: 50px;
-    }
-
-    .news-item {
-      margin-bottom: 30px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #00ff99;
-    }
-
-    .news-item:last-child {
-      border-bottom: none;
-    }
-
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      color: #00ff99;
-    }
-
-    .news-date {
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-      color: #cccccc;
-    }
-
-    .news-text {
-      font-size: 1.2rem;
-      line-height: 1.5;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    table, th, td {
-      border: 1px solid #00ff99;
-    }
-
-    th, td {
-      padding: 15px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #00ff99;
-      color: black;
-      font-size: 1.2rem;
-    }
-
-    td {
-      background-color: rgba(255, 255, 255, 0.05);
-      font-size: 1.1rem;
-    }
-
   </style>
 </head>
 <body>
 
-  <div class="sidebar">
-    <div class="logo">ORION</div>
-    <a onclick="showSection('news')">Новости</a>
-    <a onclick="showSection('team')">Таблица команды</a>
-    <a href="https://t.me/твой_telegram" target="_blank">Telegram</a>
-  </div>
-
-  <div class="content">
-    <div id="news" class="section">
-      <div class="section-title">Новости</div>
-
-      <div class="news-item">
-        <div class="section-title">Запуск нового проекта!</div>
-        <div class="news-date">28 апреля 2025</div>
-        <div class="news-text">
-          Мы рады сообщить о запуске нашего нового космического проекта ORION-X. Следите за обновлениями!
-        </div>
-      </div>
-
-      <div class="news-item">
-        <div class="section-title">Обновление сайта</div>
-        <div class="news-date">27 апреля 2025</div>
-        <div class="news-text">
-          Мы улучшили интерфейс сайта и сделали его ещё удобнее для наших пользователей. Спасибо, что вы с нами!
-        </div>
-      </div>
-    </div>
-
-    <div id="team" class="section">
-      <div class="section-title">Таблица команды</div>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Имя</th>
-            <th>Роль</th>
-            <th>Статус</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Андрей</td>
-            <td>Руководитель проекта</td>
-            <td>Активен</td>
-          </tr>
-          <tr>
-            <td>Сергей</td>
-            <td>Разработчик</td>
-            <td>Активен</td>
-          </tr>
-          <tr>
-            <td>Мария</td>
-            <td>Дизайнер</td>
-            <td>На проверке</td>
-          </tr>
-          <!-- Добавляй сюда новых участников -->
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <script>
-    function showSection(sectionId) {
-      // Скрываем все секции
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => section.style.display = 'none');
-
-      // Показываем нужную секцию
-      document.getElementById(sectionId).style.display = 'block';
-    }
-<script>
-  function showSection(sectionId) {
-    // Скрываем все секции
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => section.style.display = 'none');
-
-    // Показываем нужную секцию
-    document.getElementById(sectionId).style.display = 'block';
-  }
-
-  // При старте страницы показывать только "Новости"
-  window.onload = function() {
-    showSection('news');
-  };
-</script>
-
-  </script>
+  <div class="logo">ORION</div>
 
 </body>
 </html>

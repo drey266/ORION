@@ -196,6 +196,22 @@
       // Показываем нужную секцию
       document.getElementById(sectionId).style.display = 'block';
     }
+<script>
+  function showSection(sectionId) {
+    // Скрываем все секции
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => section.style.display = 'none');
+
+    // Показываем нужную секцию
+    document.getElementById(sectionId).style.display = 'block';
+  }
+
+  // При старте страницы показывать только "Новости"
+  window.onload = function() {
+    showSection('news');
+  };
+</script>
+
   </script>
 
 </body>

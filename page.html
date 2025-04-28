@@ -62,7 +62,7 @@
       color: black;
     }
 
-    /* Стили для таблицы */
+    /* Стили для таблиц */
     .table-container {
       margin-top: 20px;
       overflow-x: auto;
@@ -102,6 +102,7 @@
   <nav>
     <a onclick="showContent('news')" id="newsBtn">Новости</a>
     <a onclick="showContent('team')" id="teamBtn">Таблица команд</a>
+    <a onclick="showContent('schedule')" id="scheduleBtn">Расписание</a> <!-- Новая кнопка -->
     <a onclick="showContent('players')" id="playersBtn">Игроки нашей команды</a>
     <a onclick="showContent('telegram')" id="telegramBtn">Telegram</a>
   </nav>
@@ -227,10 +228,33 @@ function showContent(section) {
     `;
     document.getElementById('teamBtn').classList.add('button-active');
   }
-   else if (section === 'players') {
+  else if (section === 'schedule') {
     content.innerHTML = `
-      <h1 class="team-name">ORION</h1>
-      <h2>Игроки команды</h2>
+      <h1>Расписание матчей</h1>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Дата</th>
+              <th>Команды</th>
+              <th>Время</th>
+              <th>Место проведения</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>5 мая 2025</td><td>Орион vs Байер</td><td>18:00</td><td>Стадион "Орион"</td></tr>
+            <tr><td>12 мая 2025</td><td>Феникс vs Орион</td><td>19:00</td><td>Арена "Феникс"</td></tr>
+            <tr><td>19 мая 2025</td><td>Орион vs Бостон</td><td>18:30</td><td>Стадион "Орион"</td></tr>
+            <tr><td>26 мая 2025</td><td>Рубин vs Орион</td><td>20:00</td><td>Стадион "Рубин"</td></tr>
+          </tbody>
+        </table>
+      </div>
+    `;
+    document.getElementById('scheduleBtn').classList.add('button-active');
+  }
+  else if (section === 'players') {
+    content.innerHTML = `
+      <h1>Игроки команды</h1>
       <div class="table-container">
         <table>
           <thead>
@@ -262,7 +286,7 @@ function showContent(section) {
       </div>
     `;
     document.getElementById('playersBtn').classList.add('button-active');
-}
+  }
   else if (section === 'telegram') {
     content.innerHTML = `
       <h1>Наш Telegram</h1>

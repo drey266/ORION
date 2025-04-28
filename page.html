@@ -43,17 +43,13 @@
       border: 1px solid #00ff99;
       padding: 8px 16px;
       border-radius: 8px;
-      transition: background 0.4s ease, color 0.4s ease, transform 0.1s ease;
+      transition: background 0.3s, color 0.3s;
       cursor: pointer;
     }
 
     nav a:hover {
-      background: rgba(0, 255, 153, 0.7);
+      background: #00ff99;
       color: black;
-    }
-
-    nav a:active {
-      transform: scale(0.95);
     }
 
     .content {
@@ -66,6 +62,7 @@
       color: black;
     }
 
+    /* Стили для таблицы */
     .table-container {
       margin-top: 20px;
       overflow-x: auto;
@@ -75,7 +72,7 @@
       width: 100%;
       border-collapse: collapse;
       background-color: #001a00;
-      margin-top: 10px;
+      margin-top: 20px;
     }
 
     th, td {
@@ -122,9 +119,8 @@ function showContent(section) {
   // Снять выделение со всех кнопок
   document.querySelectorAll('nav a').forEach(btn => btn.classList.remove('button-active'));
 
-  // Обновить контент в зависимости от выбранного раздела
   if (section === 'news') {
-    content.innerHTML = 
+    content.innerHTML = `
       <h1>Новости</h1>
       <h2>Запуск нового проекта!</h2>
       <p>28 апреля 2025</p>
@@ -133,90 +129,141 @@ function showContent(section) {
       <h2>Обновление сайта</h2>
       <p>27 апреля 2025</p>
       <p>Мы улучшили интерфейс сайта и сделали его ещё удобнее для наших пользователей. Спасибо, что вы с нами!</p>
-    ;
+    `;
     document.getElementById('newsBtn').classList.add('button-active');
   } 
   else if (section === 'team') {
-    content.innerHTML = 
+    content.innerHTML = `
       <h1>Таблица команд</h1>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Команда</th>
-              <th>И</th>
-              <th>В</th>
-              <th>Н</th>
-              <th>П</th>
-              <th>Очки</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>Орион</td><td>10</td><td>8</td><td>1</td><td>1</td><td>25</td></tr>
-            <tr><td>2</td><td>Байер</td><td>10</td><td>7</td><td>2</td><td>1</td><td>23</td></tr>
-            <tr><td>3</td><td>МФК Тумужунту</td><td>10</td><td>6</td><td>1</td><td>3</td><td>19</td></tr>
-            <tr><td>4</td><td>Феникс</td><td>10</td><td>5</td><td>2</td><td>3</td><td>17</td></tr>
-            <tr><td>5</td><td>Бостон</td><td>10</td><td>5</td><td>1</td><td>4</td><td>16</td></tr>
-            <tr><td>6</td><td>2Crazy</td><td>10</td><td>4</td><td>2</td><td>4</td><td>14</td></tr>
-            <tr><td>7</td><td>FC Athletic</td><td>10</td><td>4</td><td>1</td><td>5</td><td>13</td></tr>
-            <tr><td>8</td><td>Рубин</td><td>10</td><td>3</td><td>0</td><td>7</td><td>9</td></tr>
-          </tbody>
-        </table>
-      </div>
-    ;
+<div class="table-container">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Команда</th>
+      <th>И</th>
+      <th>В</th>
+      <th>Н</th>
+      <th>П</th>
+      <th>Очки</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Орион</td>
+      <td>10</td>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Байер</td>
+      <td>10</td>
+      <td>7</td>
+      <td>2</td>
+      <td>1</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>МФК Тумужунту</td>
+      <td>10</td>
+      <td>6</td>
+      <td>1</td>
+      <td>3</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Феникс</td>
+      <td>10</td>
+      <td>5</td>
+      <td>2</td>
+      <td>3</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Бостон</td>
+      <td>10</td>
+      <td>5</td>
+      <td>1</td>
+      <td>4</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>2Crazy</td>
+      <td>10</td>
+      <td>4</td>
+      <td>2</td>
+      <td>4</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>FC Athletic</td>
+      <td>10</td>
+      <td>4</td>
+      <td>1</td>
+      <td>5</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Рубин</td>
+      <td>10</td>
+      <td>3</td>
+      <td>0</td>
+      <td>7</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    `;
     document.getElementById('teamBtn').classList.add('button-active');
   }
   else if (section === 'players') {
-  content.innerHTML = 
-    <h1>Игроки команды</h1>
-    <div style="text-align: center; margin-bottom: 20px;">
-  <span style="
-    display: inline-block;
-    font-size: 48px;
-    font-weight: bold;
-    font-family: 'Russo One', sans-serif;
-    color: #00ff99;
-    text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99;
-    margin-top: 10px;
-  ">
-    ORION
-  </span>
-</div>
-    <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
-      <tr style="background-color: #00ff99; color: black;">
-        <th>Никнейм</th>
-        <th>Позиция</th>
-        <th>Статус</th>
-      </tr>
-      <tr>
-        <td>OrionStar</td>
-        <td>Капитан</td>
-        <td>Онлайн</td>
-      </tr>
-      <tr>
-        <td>Speedster</td>
-        <td>Штурмовик</td>
-        <td>Оффлайн</td>
-      </tr>
-      <tr>
-        <td>ShieldBear</td>
-        <td>Защитник</td>
-        <td>Онлайн</td>
-      </tr>
-    </table>
-  ;
-  document.getElementById('playersBtn').classList.add('button-active');
-}
+    content.innerHTML = `
+      <h1>Игроки команды</h1>
+      <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+        <tr style="background-color: #00ff99; color: black;">
+          <th>Никнейм</th>
+          <th>Позиция</th>
+          <th>Статус</th>
+        </tr>
+        <tr>
+          <td>OrionStar</td>
+          <td>Капитан</td>
+          <td>Онлайн</td>
+        </tr>
+        <tr>
+          <td>Speedster</td>
+          <td>Штурмовик</td>
+          <td>Оффлайн</td>
+        </tr>
+        <tr>
+          <td>ShieldBear</td>
+          <td>Защитник</td>
+          <td>Онлайн</td>
+        </tr>
+      </table>
+    `;
+    document.getElementById('playersBtn').classList.add('button-active');
+  } 
   else if (section === 'telegram') {
-    content.innerHTML = 
+    content.innerHTML = `
       <h1>Наш Telegram</h1>
       <p>Присоединяйтесь к нашему сообществу в Telegram!</p>
       <a href="https://t.me/orionmlfl" target="_blank" 
          style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #00ff99; color: black; text-decoration: none; border-radius: 8px;">
          Перейти в Telegram
       </a>
-    ;
+    `;
     document.getElementById('telegramBtn').classList.add('button-active');
   }
 }

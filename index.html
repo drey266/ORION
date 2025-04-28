@@ -4,48 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ORION</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
-    /* Стили для страницы */
     body {
       margin: 0;
       padding: 0;
       height: 100vh;
-      background-color: #000; /* Черный фон */
-      color: #fff; /* Белый текст */
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Orbitron', sans-serif;
+      color: white;
+      text-align: center;
     }
 
     h1 {
-      font-size: 5rem;
-      margin-bottom: 40px;
-      letter-spacing: 5px;
+      font-size: 4rem;
+      letter-spacing: 10px;
+      color: white;
+      text-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff;
+    }
+
+    h1 span {
+      color: #00f0ff;
+      text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
     }
 
     .button {
+      margin-top: 30px;
       padding: 15px 30px;
-      font-size: 1.5rem;
-      color: #00ffff;
-      background: transparent;
-      border: 2px solid #00ffff;
+      font-size: 1.2rem;
+      background: #00f0ff;
+      border: none;
       border-radius: 10px;
+      color: #0f0c29;
+      font-weight: bold;
+      cursor: pointer;
       text-decoration: none;
-      transition: 0.3s;
+      transition: background 0.3s;
     }
 
     .button:hover {
-      background-color: #00ffff;
-      color: #000;
+      background: #00c0cc;
     }
   </style>
 </head>
 <body>
 
-  <h1>ORION</h1>
-  <a href="page.html" class="button">Перейти на сайт</a>
+  <h1><span>O</span>RION</h1>
+  <a class="button" href="page.html">Перейти на сайт</a>
 
 </body>
 </html>

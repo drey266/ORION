@@ -70,6 +70,7 @@
   <nav>
     <a onclick="showContent('news')" id="newsBtn">Новости</a>
     <a onclick="showContent('team')" id="teamBtn">Таблица команды</a>
+    <a onclick="showContent('players')" id="playersBtn">Игроки команды</a>
     <a onclick="showContent('telegram')" id="telegramBtn">Telegram</a>
   </nav>
 </header>
@@ -83,10 +84,10 @@
 function showContent(section) {
   const content = document.getElementById('contentArea');
   
-  // Убираем активность у всех кнопок
+  // Снять выделение со всех кнопок
   document.querySelectorAll('nav a').forEach(btn => btn.classList.remove('button-active'));
 
-  // Вставляем нужный контент
+  // Обновить контент в зависимости от выбранного раздела
   if (section === 'news') {
     content.innerHTML = `
       <h1>Новости</h1>
@@ -127,12 +128,40 @@ function showContent(section) {
       </table>
     `;
     document.getElementById('teamBtn').classList.add('button-active');
+  }
+  else if (section === 'players') {
+    content.innerHTML = `
+      <h1>Игроки команды</h1>
+      <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+        <tr style="background-color: #00ff99; color: black;">
+          <th>Никнейм</th>
+          <th>Позиция</th>
+          <th>Статус</th>
+        </tr>
+        <tr>
+          <td>OrionStar</td>
+          <td>Капитан</td>
+          <td>Онлайн</td>
+        </tr>
+        <tr>
+          <td>Speedster</td>
+          <td>Штурмовик</td>
+          <td>Оффлайн</td>
+        </tr>
+        <tr>
+          <td>ShieldBear</td>
+          <td>Защитник</td>
+          <td>Онлайн</td>
+        </tr>
+      </table>
+    `;
+    document.getElementById('playersBtn').classList.add('button-active');
   } 
   else if (section === 'telegram') {
     content.innerHTML = `
       <h1>Наш Telegram</h1>
       <p>Присоединяйтесь к нашему сообществу в Telegram!</p>
-      <a href="https://t.me/orionmlfl" target="_blank" 
+      <a href="https://t.me/your_telegram_link" target="_blank" 
          style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #00ff99; color: black; text-decoration: none; border-radius: 8px;">
          Перейти в Telegram
       </a>
@@ -145,15 +174,3 @@ function showContent(section) {
 </body>
 </html>
 
-  <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
-
-</body>
-</html>

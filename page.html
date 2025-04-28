@@ -62,7 +62,6 @@
       color: black;
     }
 
-    /* Стили для таблиц */
     .table-container {
       margin-top: 20px;
       overflow-x: auto;
@@ -102,7 +101,8 @@
   <nav>
     <a onclick="showContent('news')" id="newsBtn">Новости</a>
     <a onclick="showContent('team')" id="teamBtn">Таблица команд</a>
-    <a onclick="showContent('schedule')" id="scheduleBtn">Расписание</a> <!-- Новая кнопка -->
+    <a onclick="showContent('schedule')" id="scheduleBtn">Расписание</a>
+    <a onclick="showContent('history')" id="historyBtn">История матчей</a>
     <a onclick="showContent('players')" id="playersBtn">Игроки нашей команды</a>
     <a onclick="showContent('telegram')" id="telegramBtn">Telegram</a>
   </nav>
@@ -136,121 +136,63 @@ function showContent(section) {
   else if (section === 'team') {
     content.innerHTML = `
       <h1>Таблица команд</h1>
-<div class="table-container">
-<table>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Команда</th>
-      <th>И</th>
-      <th>В</th>
-      <th>Н</th>
-      <th>П</th>
-      <th>Очки</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Орион</td>
-      <td>10</td>
-      <td>8</td>
-      <td>1</td>
-      <td>1</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Байер</td>
-      <td>10</td>
-      <td>7</td>
-      <td>2</td>
-      <td>1</td>
-      <td>23</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>МФК Тумужунту</td>
-      <td>10</td>
-      <td>6</td>
-      <td>1</td>
-      <td>3</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Феникс</td>
-      <td>10</td>
-      <td>5</td>
-      <td>2</td>
-      <td>3</td>
-      <td>17</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Бостон</td>
-      <td>10</td>
-      <td>5</td>
-      <td>1</td>
-      <td>4</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>2Crazy</td>
-      <td>10</td>
-      <td>4</td>
-      <td>2</td>
-      <td>4</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>FC Athletic</td>
-      <td>10</td>
-      <td>4</td>
-      <td>1</td>
-      <td>5</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>Рубин</td>
-      <td>10</td>
-      <td>3</td>
-      <td>0</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+      <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Команда</th>
+            <th>И</th>
+            <th>В</th>
+            <th>Н</th>
+            <th>П</th>
+            <th>Очки</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Орион</td><td>10</td><td>8</td><td>1</td><td>1</td><td>25</td></tr>
+          <tr><td>2</td><td>Байер</td><td>10</td><td>7</td><td>2</td><td>1</td><td>23</td></tr>
+          <tr><td>3</td><td>МФК Тумужунту</td><td>10</td><td>6</td><td>1</td><td>3</td><td>19</td></tr>
+          <tr><td>4</td><td>Феникс</td><td>10</td><td>5</td><td>2</td><td>3</td><td>17</td></tr>
+          <tr><td>5</td><td>Бостон</td><td>10</td><td>5</td><td>1</td><td>4</td><td>16</td></tr>
+          <tr><td>6</td><td>2Crazy</td><td>10</td><td>4</td><td>2</td><td>4</td><td>14</td></tr>
+          <tr><td>7</td><td>FC Athletic</td><td>10</td><td>4</td><td>1</td><td>5</td><td>13</td></tr>
+          <tr><td>8</td><td>Рубин</td><td>10</td><td>3</td><td>0</td><td>7</td><td>9</td></tr>
+        </tbody>
+      </table>
+      </div>
     `;
     document.getElementById('teamBtn').classList.add('button-active');
   }
   else if (section === 'schedule') {
     content.innerHTML = `
       <h1>Расписание матчей</h1>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Дата</th>
-              <th>Команды</th>
-              <th>Время</th>
-              <th>Место проведения</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>5 мая 2025</td><td>Орион vs Байер</td><td>18:00</td><td>Стадион "Орион"</td></tr>
-            <tr><td>12 мая 2025</td><td>Феникс vs Орион</td><td>19:00</td><td>Арена "Феникс"</td></tr>
-            <tr><td>19 мая 2025</td><td>Орион vs Бостон</td><td>18:30</td><td>Стадион "Орион"</td></tr>
-            <tr><td>26 мая 2025</td><td>Рубин vs Орион</td><td>20:00</td><td>Стадион "Рубин"</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Скоро здесь появится расписание матчей!</p>
     `;
     document.getElementById('scheduleBtn').classList.add('button-active');
+  }
+  else if (section === 'history') {
+    content.innerHTML = `
+      <h1>История матчей</h1>
+      <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Дата</th>
+            <th>Матч</th>
+            <th>Счёт</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>15.04.2025</td><td>Орион vs Байер</td><td>3:1</td></tr>
+          <tr><td>08.04.2025</td><td>Феникс vs Орион</td><td>0:2</td></tr>
+          <tr><td>01.04.2025</td><td>Орион vs 2Crazy</td><td>1:1</td></tr>
+          <tr><td>25.03.2025</td><td>Рубин vs Орион</td><td>2:4</td></tr>
+        </tbody>
+      </table>
+      </div>
+    `;
+    document.getElementById('historyBtn').classList.add('button-active');
   }
   else if (section === 'players') {
     content.innerHTML = `
